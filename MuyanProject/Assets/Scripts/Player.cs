@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 3f;
+    public GameObject goldParticle;
 
     void Start()
     {
@@ -20,5 +21,11 @@ public class Player : MonoBehaviour
     void MoveForward()
     {
         transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Instantiate(goldParticle, transform.position, Quaternion.identity);
+        Destroy(other.gameObject);
     }
 }
