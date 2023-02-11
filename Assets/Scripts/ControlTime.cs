@@ -13,7 +13,7 @@ public class ControlTime : MonoBehaviour
             {
                 if (Time.timeScale > 0)
                 {
-                    Time.timeScale -= 0.2f;
+                    Time.timeScale = 0.1f;
                     slowdownPressed = true;
                     StartCoroutine(Slowdown());
                 }
@@ -24,8 +24,8 @@ public class ControlTime : MonoBehaviour
 
     IEnumerator Slowdown()
     {
-        yield return new WaitForSeconds(5f);
-        Time.timeScale += 0.2f;
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 1;
         slowdownPressed = false;
     }
 }
