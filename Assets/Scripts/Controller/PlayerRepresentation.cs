@@ -36,6 +36,11 @@ public class PlayerRepresentation : MonoBehaviour {
         FollowTransformLikeParent();
         CentralizedControl(inputManager.horizontalMoveAxis, inputManager.verticalMoveAxis);
         ApplyAnimation();
+
+        //if( time is slow){
+        //    representationAnimator.SetFloat("Speed", 2f);
+        //}
+        //
     }
 
     /// <summary>
