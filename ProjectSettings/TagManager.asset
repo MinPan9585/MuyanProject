@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Feet
   - Stone
+  - Fork
+  - Wall
   layers:
   - Default
   - TransparentFX
