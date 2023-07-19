@@ -79,11 +79,11 @@ public class ThirdPersonCamera : MonoBehaviour
         {
             Debug.LogError("There is no input manager in the scene and the ThirdPersonCharacterController needs one to run");
         }
-        if (player == null)
-        {
-            Debug.LogError("There is no character controller reference set for the third person camera. + " +
-                "\n It needs one to run correctly");
-        }
+        //if (player == null)
+        //{
+        //    Debug.LogError("There is no character controller reference set for the third person camera. + " +
+        //        "\n It needs one to run correctly");
+        //}
 
         rotationReference = transform.parent;
         if (rotationReference == null)

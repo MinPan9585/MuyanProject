@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class CrossPlayer : MonoBehaviour
 {
-    private float playerSpeed = 7f;
-
+    public float playerSpeed;
+    private Rigidbody rb;
     private Vector3 moveDirection;
 
     // Start is called before the first frame update
     void Start()
     {
-        // player = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         moveDirection = transform.forward;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(moveDirection * playerSpeed * Time.deltaTime, Space.World);
+        //Debug.Log(moveDirection);
+        rb.velocity = moveDirection * playerSpeed * Time.deltaTime;
+        //transform.Translate(moveDirection * playerSpeed * Time.deltaTime, Space.World);
         GetForkPositon();
     }
 
@@ -55,7 +57,7 @@ public class CrossPlayer : MonoBehaviour
                     Vector3 clickedObjectPosition = hit.point;
                     Debug.Log("µã»÷µÄ×ø±ê: " + clickedObjectPosition);
 
-                    moveDirection = (clickedObjectPosition - transform.position);
+                    moveDirection = (clickedObjectPosition - transform.position).normalized;
                     // return clickedObjectPosition;
                 }
             }
