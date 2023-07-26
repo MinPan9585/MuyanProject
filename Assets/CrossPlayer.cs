@@ -55,7 +55,7 @@ public class CrossPlayer : MonoBehaviour
                 if (clickedObject.CompareTag("Fork"))
                 {
                     Vector3 clickedObjectPosition = hit.point;
-                    Debug.Log("点击的坐标: " + clickedObjectPosition);
+                    // Debug.Log("点击的坐标: " + clickedObjectPosition);
 
                     moveDirection = (clickedObjectPosition - transform.position).normalized;
                     // return clickedObjectPosition;

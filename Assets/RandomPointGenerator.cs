@@ -18,7 +18,7 @@ public class RandomPointGenerator : MonoBehaviour
     void Update()
     {
         // point disappears after colliding, then generate new point
-        Debug.Log(Vector3.Distance(player.transform.position, currentPoint.transform.position));
+        // Debug.Log(Vector3.Distance(player.transform.position, currentPoint.transform.position));
         if (Vector3.Distance(player.transform.position, currentPoint.transform.position) < 3.0f)
         {
             Destroy(currentPoint);

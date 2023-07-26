@@ -111,3 +111,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3037fa251111ce3408092c8d18594823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offsetAmount: 1
+  animationTime: 1
