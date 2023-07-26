@@ -12,6 +12,24 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private BoxCollider boxCollider;
     private Coroutine animationCoroutine;
 
+    private void OnMouseEnter()
+    {
+        if (animationCoroutine != null)
+        {
+            StopCoroutine(animationCoroutine);
+        }
+        animationCoroutine = StartCoroutine(AnimateScale(hoverPrefabSize, hoverColliderSize));
+    }
+
+    private void OnMouseExit()
+    {
+        if (animationCoroutine != null)
+        {
+            StopCoroutine(animationCoroutine);
+        }
+        animationCoroutine = StartCoroutine(AnimateScale(normalPrefabSize, normalColliderSize));
+    }
+
     // init fork size
     private void Start()
     {
