@@ -40,7 +40,8 @@ public class CrossPlayer : MonoBehaviour
 
     private void GetForkPositon()
     {
-        // 鼠标点击时获取选中的 fork 物体坐标
+        // get fork position when input space
+        // if (Input.GetKeyDown(KeyCode.Space))
         if (Input.GetMouseButtonDown(0))
         {
             // 这里应该从摄像机取点还是从 player 取点呢？

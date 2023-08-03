@@ -2,33 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class HoverEffect : MonoBehaviour
 {
-    public Vector3 hoverPrefabSize = new (1.2f, 1.2f, 1.2f);
-    public Vector3 hoverColliderSize = new (1.2f, 1.2f, 1.2f);
+    public Vector3 hoverPrefabSize = new (1.5f, 1.5f, 1.5f);
+    public Vector3 hoverColliderSize = new (1.5f, 1.5f, 1.5f);
 
     private Vector3 normalPrefabSize;
     private Vector3 normalColliderSize;
     private BoxCollider boxCollider;
     private Coroutine animationCoroutine;
-
-    private void OnMouseEnter()
-    {
-        if (animationCoroutine != null)
-        {
-            StopCoroutine(animationCoroutine);
-        }
-        animationCoroutine = StartCoroutine(AnimateScale(hoverPrefabSize, hoverColliderSize));
-    }
-
-    private void OnMouseExit()
-    {
-        if (animationCoroutine != null)
-        {
-            StopCoroutine(animationCoroutine);
-        }
-        animationCoroutine = StartCoroutine(AnimateScale(normalPrefabSize, normalColliderSize));
-    }
 
     // init fork size
     private void Start()
@@ -42,9 +24,8 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    private void OnMouseEnter()
     {
-        Debug.Log("OnPointerEnter!");
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);
@@ -52,14 +33,8 @@ public class HoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         animationCoroutine = StartCoroutine(AnimateScale(hoverPrefabSize, hoverColliderSize));
     }
 
-    public void MouseEnterEvent(PointerEventData eventData)
+    private void OnMouseExit()
     {
-        Debug.Log("MouseEnterEvent!");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("OnPointerExit!");
         if (animationCoroutine != null)
         {
             StopCoroutine(animationCoroutine);
