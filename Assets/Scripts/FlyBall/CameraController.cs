@@ -4,33 +4,43 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target; // Player Transform
+    public Transform player;
     public float distance = 4.0f; // Distance from the player
     public float xSpeed = 120.0f; // Camera rotation speed
     public float ySpeed = 120.0f;
 
     private float x = 0.0f;
     private float y = 0.0f;
+    private Vector3 cameraPositionOffset;
+    private Vector3 lookAtOffset;
 
     void Start()
     {
         Vector3 angles = transform.eulerAngles;
         x = angles.y;
         y = angles.x;
+
+        // 设置摄像机的初始位置
+        // 获取 player 的初始朝向
+        cameraPositionOffset = -1 * distance * player.transform.forward;
+        lookAtOffset = player.transform.up;
+        transform.position = cameraPositionOffset + player.position;
+        transform.LookAt(lookAtOffset + player.position);
     }
 
     void LateUpdate()
     {
-        if (target)
-        {
-            x += -1 * Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
-            y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
+        x += Input.GetAxis("Mouse X") * xSpeed * Time.deltaTime;
+        y -= Input.GetAxis("Mouse Y") * ySpeed * Time.deltaTime;
 
-            Quaternion rotation = Quaternion.Euler(y, x, 0);
-            Vector3 position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.position;
+        y = Mathf.Clamp(y, -89, 89);
 
-            transform.rotation = rotation;
-            transform.position = position;
-        }
+        Quaternion rotation = Quaternion.Euler(y, x, 0);
+        Vector3 position = rotation * cameraPositionOffset + player.position;
+
+        transform.rotation = rotation;
+        transform.position = position;
+
+        transform.LookAt(rotation * lookAtOffset + player.position);
     }
 }

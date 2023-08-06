@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7264038999097928041}
   - component: {fileID: 4877723228587500467}
   - component: {fileID: 8941126890176276162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4822,10 +4822,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3521209114290089542}
   - component: {fileID: 7772752823835153734}
-  - component: {fileID: 410985767685875025}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Coin0726
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4869,19 +4868,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &410985767685875025
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4293629895253210364}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.68
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4385103034420542409
 GameObject:
   m_ObjectHideFlags: 0
@@ -4893,7 +4879,7 @@ GameObject:
   - component: {fileID: 336784373877437731}
   - component: {fileID: 9030049349404492733}
   - component: {fileID: 600988527854673762}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4976,7 +4962,7 @@ GameObject:
   - component: {fileID: 8755598829552109972}
   - component: {fileID: 2202586007625131645}
   - component: {fileID: 4738432395380747872}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5059,7 +5045,7 @@ GameObject:
   - component: {fileID: 1152045041519546368}
   - component: {fileID: 1880086919411413549}
   - component: {fileID: 6696578508834188220}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -48,8 +48,10 @@ public class CrossPlayer : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
+            // 创建一个 LayweMask 忽略 clickIgnore 层
+            int layerMask = ~(1 << LayerMask.NameToLayer("clickIgnore"));
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
             {
                 GameObject clickedObject = hit.collider.gameObject;
 

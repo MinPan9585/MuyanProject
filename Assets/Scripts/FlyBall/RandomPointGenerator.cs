@@ -6,25 +6,31 @@ public class RandomPointGenerator : MonoBehaviour
 {
     public GameObject point;
     public GameObject player;
-    public scoreManager scoreManager;
+    public float coinTriggerDistance;
+    public float coinGenerateDistance;
+
     private List<Vector3> pathList;
     private GameObject currentPoint;
+    private ScoreManager scoreManager;
 
     void Start()
     {
         pathList = GeneratePathList();
         GeneratePoint();
+        GameObject ScoreManager = GameObject.FindGameObjectWithTag("ScoreManager");
+        scoreManager = ScoreManager.GetComponent<ScoreManager>();
     }
 
     void Update()
     {
-        // point disappears after colliding, then generate new point
-        // Debug.Log(Vector3.Distance(player.transform.position, currentPoint.transform.position));
-        if (Vector3.Distance(player.transform.position, currentPoint.transform.position) < 2.0f)
+        if (currentPoint && Vector3.Distance(player.transform.position, currentPoint.transform.position) < coinTriggerDistance)
         {
             scoreManager.AddScore(1);
             Destroy(currentPoint);
-            GeneratePoint();
+            if (scoreManager.currentScore < scoreManager.targetScore)
+            {
+                GeneratePoint();
+            }
         }
     }
 
@@ -50,10 +56,24 @@ public class RandomPointGenerator : MonoBehaviour
         int randomIndex = Random.Range(0, pathList.Count / 2) * 2;
         Vector3 startPoint = pathList[randomIndex];
         Vector3 endPoint = pathList[randomIndex + 1];
-        float t = Random.Range(0f, 1f);
-        Vector3 spawnPosition = Vector3.Lerp(startPoint, endPoint, t);
+        //float t = Random.Range(0f, 1f);
+        //Vector3 spawnPosition = Vector3.Lerp(startPoint, endPoint, t);
+        //currentPoint = Instantiate(point, spawnPosition, Quaternion.identity);
+        float minDistance = coinGenerateDistance;
+        Vector3 spawnPosition = startPoint;
+        bool validPosition = false;
+
+        while (!validPosition)
+        {
+            float t = Random.Range(0f, 1f);
+            spawnPosition = Vector3.Lerp(startPoint, endPoint, t);
+
+            if (Vector3.Distance(spawnPosition, startPoint) >= minDistance && Vector3.Distance(spawnPosition, endPoint) >= minDistance)
+            {
+                validPosition = true;
+            }
+        }
+
         currentPoint = Instantiate(point, spawnPosition, Quaternion.identity);
     }
-
-    // test
 }
