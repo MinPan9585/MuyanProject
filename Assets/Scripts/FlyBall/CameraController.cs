@@ -22,8 +22,8 @@ public class CameraController : MonoBehaviour
 
         // 设置摄像机的初始位置
         // 获取 player 的初始朝向
-        cameraPositionOffset = -1 * distance * player.transform.forward;
-        lookAtOffset = player.transform.up;
+        cameraPositionOffset = -1f * distance * player.transform.forward;
+        lookAtOffset = 1.6f * player.transform.up;
         transform.position = cameraPositionOffset + player.position;
         transform.LookAt(lookAtOffset + player.position);
     }
