@@ -33,6 +33,10 @@ public class CrossPlayer : MonoBehaviour
     {
         if(collision.collider.CompareTag("Wall"))
         {
+            // 从小球发出射线
+            // Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // Physics.Raycast(transform.position, moveDirection, 2)
+            // RaycastHit hit;
             Vector3 relectionAngle = Vector3.Reflect(moveDirection, collision.contacts[0].normal);
             moveDirection = relectionAngle.normalized;
         }
