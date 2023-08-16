@@ -133,7 +133,7 @@ Material:
     - _VectorAmount: {r: 0, g: 0, b: 0, a: 0}
     - _VertexAmount: {r: 0, g: 0, b: 0.01, a: 0}
     - _WallCenter: {r: 0, g: 0, b: 0, a: 0}
-    - _sphereCenter: {r: 3.07, g: 1.38, b: -5.96, a: 0}
+    - _sphereCenter: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2317409672641238708
 MonoBehaviour:
