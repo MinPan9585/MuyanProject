@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NGroundCylinderR1
+  m_Name: MHealPropFresnel1
   m_Shader: {fileID: -6465566751694194690, guid: 88e183007052b4349969432763dd462e,
     type: 3}
   m_ValidKeywords: []
@@ -26,7 +26,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_8f969eb48fd9450283629bf488df3b7c:
-        m_Texture: {fileID: 2800000, guid: 4cf34a9513d4ad241baffd3ca25cac67, type: 3}
+        m_Texture: {fileID: 2800000, guid: 529fc9dd245731745800ccd7dbf2f346, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_9b5f9ba7410c44ddb265d94e5c84c07e:
@@ -34,7 +34,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_dbfcc996b2b141acac2dbd8a8fe10095:
-        m_Texture: {fileID: 2800000, guid: d7ccb4d84b1368c40a03394972882732, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7a02042639682504eb6f3a2458e15d10, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -95,21 +95,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Boolean_7f77e3c9f48a42e78fd96943c89308e7: 0
+    - Boolean_7f77e3c9f48a42e78fd96943c89308e7: 1
     - Vector1_0fcd901f156d4799966ee3f7156b21b3: 0
     - Vector1_245fdf3a0d7a4063b17613c5406d451c: 1
     - Vector1_4b74798b6e9d4516a2661c7f01f39c5c: 0
     - Vector1_888901574af6420bb6e29fd687373ecb: 0
     - Vector1_89bd07497cf44090969747abf61dc139: 1
-    - Vector1_94530a233d764749b4e19e78a7c8ec90: 0.41
-    - Vector1_98b3f5f155ac4ba5ab26029460c6a1a2: 0
-    - Vector1_a1add93f34ca4e778f46e30970664ca4: 1
+    - Vector1_94530a233d764749b4e19e78a7c8ec90: 0
+    - Vector1_98b3f5f155ac4ba5ab26029460c6a1a2: -0.1
+    - Vector1_a1add93f34ca4e778f46e30970664ca4: 2
     - Vector1_c00f31caa06d4a22b7296abed1f4024c: 1
-    - Vector1_d92b0897ccbd4d4fbb98664f77f5c9d3: 1.3
+    - Vector1_d92b0897ccbd4d4fbb98664f77f5c9d3: 1
     - Vector1_da8899d3336f4fdaa74224242c5b54bb: 1
-    - Vector1_dc96066ca80e44218f743fc24972c88a: 0
-    - Vector1_faab1c805ad042a39d40b12e80a5bb32: 1.63
-    - Vector1_fb166f17836b416ba4a8067e4c3c2d18: 0.37
+    - Vector1_dc96066ca80e44218f743fc24972c88a: 0.05
+    - Vector1_faab1c805ad042a39d40b12e80a5bb32: 20
+    - Vector1_fb166f17836b416ba4a8067e4c3c2d18: 0.58
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -138,16 +138,17 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_0adba7552e2a47d182a2316585a2a061: {r: 4.19109, g: 0.41741198, b: 0.34266746,
+    - Color_0adba7552e2a47d182a2316585a2a061: {r: 0.24313726, g: 0.41568628, b: 0.36862746,
         a: 1}
-    - Color_e3c4cec1933940819c9e49e1dd81b34d: {r: 1, g: 1, b: 1, a: 1}
-    - Color_e8fe7e969c2c4eeeb2734996b6e0ee3d: {r: 1, g: 1, b: 1, a: 1}
+    - Color_e3c4cec1933940819c9e49e1dd81b34d: {r: 1, g: 0, b: 0.80067587, a: 1}
+    - Color_e8fe7e969c2c4eeeb2734996b6e0ee3d: {r: 0.21960783, g: 0.26404488, b: 0.85882354,
+        a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8842326695801838216
+--- !u!114 &8963175785667291277
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
